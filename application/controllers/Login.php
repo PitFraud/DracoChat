@@ -46,10 +46,12 @@ class Login extends CI_Controller{
         }
         else
         {
+            $uniqid = 'DC-'.uniqid();
             $data = array(
                 'login_name' => $this->input->post('username'),
                 'login_email' => $this->input->post('email'),
                 'login_password' => $this->input->post('password'),
+                'login_user_id' => $uniqid,
                 'login_created_at' => date("Y-m-d"),
                 'login_updated_at' => date("Y-m-d"),
                 'login_status' => 1,
